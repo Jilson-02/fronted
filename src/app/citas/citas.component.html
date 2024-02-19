@@ -1,0 +1,74 @@
+<p>citas works!</p>
+<form action="">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <select #tipoPersona_id name="tipoPersona_id" class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Seleccione el tipo de Categoria</option>
+                    @for (item of datosC; track $index) {
+                        <option value="{{item.id}}">{{item.type}}</option>
+                    }
+                </select>
+
+                <div class="form-group mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" #nombre name="nombre" class="form-control" id="nombre" aria-describedby="nombreHelp" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" #apellido name="apellido" class="form-control" id="apellido">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="cedula">Cedula</label>
+                    <input type="text" #cedula name="cedula" class="form-control" id="cedula">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="correo">Correo</label>
+                    <input type="email" #correo name="correo" class="form-control" id="correo">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" #telefono name="telefono" class="form-control" id="telefono">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="especialidad">Especialidad</label>
+                    <input type="text" #especialidad name="especialidad" class="form-control" id="especialidad">
+                </div>
+
+                <button type="button" (click)="guardarD(nombre,apellido,cedula,correo,telefono,especialidad,tipoPersona_id)" class="btn btn-primary">Registrar</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="input-group mb-3 mt-10" >
+    <input type="date" #buscar name="buscar"  class="form-control" placeholder="Fecha de transaccion" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <button type="button" (click)="getBusqueda(buscar)" class="btn btn-dark">Buscar</button>
+</div>
+
+<!-- 
+    <table class="table">
+      <thead>
+        <tr>
+          <th>DESCRIPCION</th>
+          <th>MONTO</th>
+          <th>FECHA TRANSACCION</th>
+          <th>categoria</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of gast; track $index) {
+        <tr>
+          <td>{{item.descripcion}}</td>
+          <td>{{item.monto}}</td>
+          <td>{{item.fechaTransaccion}}</td>
+          <td>{{item.categoria.tipo }}</td>
+        </tr>
+      }
+      </tbody>
+    </table> -->
